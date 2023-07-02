@@ -1,0 +1,344 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+ /* Adjust the perspective value to your preference */
+  }
+  
+  .container {
+    transform-style: preserve-3d;
+    transform: rotateY(10deg); /* Adjust the rotation value to your preference */
+  }
+  
+
+/* Style the video background */
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  z-index: -1; /* Ensure the video stays in the background */
+}
+
+/* Style the sections and content */
+section {
+  position: relative; /* Position relative for content placement */
+  padding: 100px 0;
+  color:  #ffeeee;
+  text-align: center;
+  z-index: 2; /* Bring the content above the video */
+}
+
+section h2 {
+  margin-bottom: 20px;
+}
+
+/* Style the navigation */
+nav {
+  position: relative; /* Position relative for z-index */
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  z-index: 3; /* Bring the navigation above the video */
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+    color: #eaff00;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Style the experience section */
+#experience {
+  position: relative; /* Position relative for z-index */
+ 
+  padding-top: 200px; /* Adjust the padding to avoid overlapping with the video */
+  z-index: 2; /* Bring the section above the video */
+}
+
+.experience-item {
+  margin-bottom: 40px;
+}
+
+.experience-item h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.experience-date {
+    color: #ffeeee;
+  margin-bottom: 5px;
+}
+
+.experience-description {
+    color: #ffeeee;
+}
+
+/* Style the portfolio section */
+#portfolio {
+   
+  }
+  
+  .portfolio-item {
+    margin-bottom: 40px;
+  }
+  
+  .portfolio-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .portfolio-description {
+    color: #ffeeee;
+  }
+  
+  .portfolio-link {
+    display: inline-block;
+    background-color: #ffeeee;
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+
+/* Style the footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: #FFFF00;
+    text-align: center;
+    z-index: 3; /* Bring the footer above the video */
+  }
+ 
+  .social-media-links li {
+
+    
+        max-width: 200px; /* Adjust the maximum width of the logo image */
+        height: auto;
+        display: inline-block;
+        
+    }
+
+    
+        @keyframes slideIn {
+            0% {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
+            100% {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+         .content h1 {
+            animation: slideIn 1s ease-in-out;
+          }
+
+
+
+          @keyframes rotateY {
+            0% {
+              transform: rotateY(0);
+            }
+            100% {
+              transform: rotateY(360deg);
+            }
+          }
+          
+          .skills-list {
+            display: flex;
+            justify-content: space-between;
+          }
+          
+          .skill-item {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            perspective: 1000px;
+            animation: rotateY 10s infinite linear;
+          }
+          
+          .skill-item img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transform-style: preserve-3d;
+            transform: rotateY(0);
+            backface-visibility: hidden;
+          }
+          
+          .skill-level {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 100%;
+            height: 10px;
+            background-color: #ccc;
+          }
+          
+          .skill-fill {
+            height: 100%;
+            background-color: #37b8b5;
+            transform-origin: left;
+          }
+          
+          
+
+
+          /* Responsive styles */
+
+/* Small devices (e.g., smartphones) */
+@media only screen and (max-width: 767px) {
+    /* Add responsive styles for small devices here */
+    header nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    header nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Add margin to the bottom of each section */
+    section {
+      margin-bottom: 30px;
+    }
+
+    /* Adjust the layout of the skills section */
+    #skills .skills-list {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skill-item {
+      margin-bottom: 20px;
+    }
+
+    /* Adjust the layout of the portfolio section */
+    #portfolio .carousel-inner {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .carousel-item .row {
+      flex-direction: column;
+    }
+
+    .carousel-item .col-lg-6 {
+      width: 100%;
+    }
+
+    /* Adjust the layout of the contact section */
+    #contact .contact-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+  }
+  
+  /* Medium devices (e.g., tablets) */
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Add responsive styles for medium devices here */
+  }
+  
+  /* Large devices (e.g., desktops) */
+  @media only screen and (min-width: 1024px) {
+    /* Add responsive styles for large devices here */
+  }
+    
+
+  /* Smartphone styles */
+@media only screen and (max-width: 480px) {
+    /* Adjust layout and styles for smartphones */
+    *{
+   
+     
+    }
+  }
+  
+  /* Smartphone landscape styles */
+  @media only screen and (min-width: 481px) and (max-width: 767px) {
+    /* Adjust layout and styles for smartphones in landscape mode */
+  }
+       
+
+
+
+
+  
+  /* Add additional styling as per your requirements */
+
+
+
+  
+    /* Custom gradient text color with flashing effect */
+    h1,
+    h2,
+    h3
+    {
+      background: linear-gradient(to right, #FFA500, #FF4500, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      /* animation: flashing 1s infinite; */
+      font-weight: 900;
+
+      text-shadow: 0 0 20px #ff1493, 0 0 50px #ff1493, 0 0 80px #ff1493, 0 0 100px #ff1493, 0 0 150px #ff1493;
+
+    }
+    @keyframes flashing {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* @keyframes trafficSignal {
+      0%, 50% {
+        transform: scaleY(1);
+      }
+      25%, 75% {
+        transform: scaleY(1.5);
+      }
+    } */
+  
+  
+   
+
+        
+      
+
+
+  
+  
+  
+  
+  
